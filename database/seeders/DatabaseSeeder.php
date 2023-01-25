@@ -20,5 +20,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        \App\Models\Hospital::factory()->create(
+            ['hospital_code'=> 1,
+            'hospital_name'=> 'Main_Hospital',
+            'hospital_address'=> "",
+            'phone'=> '09090909',
+            'password'=>"123456789"]
+        );
     }
 }
