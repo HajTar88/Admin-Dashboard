@@ -30,12 +30,12 @@ Route::delete('/hospital/{Hospital}',[\App\Http\Controllers\Api\HospitalControll
 
 
 
-Route::controller(AuthController::class)->group(function () {
-    Route::post('login', 'login');
-    Route::post('register', 'register');
-    Route::post('logout', 'logout');
-    Route::post('refresh', 'refresh');
-    Route::get('me', 'me');
+// Route::controller(AuthController::class)->group(function () {
+//     Route::post('login', 'login');
+//     Route::post('register', 'register');
+//     Route::post('logout', 'logout');
+//     Route::post('refresh', 'refresh');
+//     Route::get('me', 'me');
 
-});
+// });
 

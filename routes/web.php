@@ -38,7 +38,7 @@ Route::get('/', function () {
     // Route::get('modify/{id}','CompaniesController@modify');
     // Route::put('Update/{id}','CompaniesController@update');
     // ################# CompaniesController #################
-       
+
 Auth::routes();
 Route::middleware('auth')->group(function() {
     Route::resource('doctors', 'DoctorController');
@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function() {
     ################# CompaniesController #################
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('postlogin', [UserController::class, 'login'])->name('postlogin'); 
+Route::post('postlogin', [UserController::class, 'login'])->name('postlogin');
 Route::post('postsignup', [UserController::class, 'signupsave'])->name('postsignup');
 Route::get('signout', [UserController::class, 'signOut'])->name('signout');
 Route::resource('index', 'WebsiteController');
