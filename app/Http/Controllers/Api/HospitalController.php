@@ -35,7 +35,7 @@ public function show($id)
 public function store(Request $request){
 
    $hospital= $request->validate([
-      "hospital_code"=>"required|string|min:5",
+      "hospital_code"=>"required",
       "hospital_name"=>"required",
       "hospital_address"=>"required",
       "phone"=>"required",
