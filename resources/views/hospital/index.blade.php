@@ -19,6 +19,8 @@
     <!-- Bootstrap 4 RTL -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
+
   <style>
     .pagination {
       display: inline-block;
@@ -58,11 +60,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -125,7 +127,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -142,7 +144,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
+
 
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -160,8 +162,8 @@
             <a href="{{route('hospitals.index')}}" class="nav-link active">
                 <i class="bi bi-hospital"></i>
                 <p>
-                المستشفيـــــات 
-                
+                المستشفيـــــات
+
               </p>
             </a>
           </li>
@@ -169,8 +171,8 @@
             <a href="{{route('Companies.index')}}" class="nav-link">
                 <i class="bi bi-building"></i>
               <p>
-                الشركـــــات الطبيـــــة 
-                
+                الشركـــــات الطبيـــــة
+
               </p>
             </a>
           </li>
@@ -204,10 +206,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            
+
           </div><!-- /.col -->
           <div class="col-sm-6">
-           
+
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -218,7 +220,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-      
+
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
@@ -280,10 +282,10 @@
                          <a href="{{ route('hospitals.show', $item->id)}}"><i class="bi bi-eye-fill"></i></a>
                          <a href="{{url('deleteh/'.$item->id)}}" class="delete-confirm"><i class="bi bi-trash-fill" style="color: red"></i></a>
                         </td>
-                      </tr>     
+                      </tr>
                       @endforeach
                     </tbody>
-                  </table> 
+                  </table>
                   {{$hospitals->links()}}
                 </div>
               </div><!-- /.card-body -->
@@ -292,10 +294,10 @@
 
 
             <!-- TO DO List -->
-          
+
             <!-- /.card -->
           </section>
-       
+
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->

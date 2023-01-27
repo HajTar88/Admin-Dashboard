@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
+
         <!-- Font Awesome -->
         <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
         <!-- Theme style -->
@@ -137,8 +139,8 @@
                         <a href="{{route('hospitals.index')}}" class="nav-link  active">
                             <i class="bi bi-hospital"></i>
                             <p>
-                            المستشفيـــــات 
-                            
+                            المستشفيـــــات
+
                           </p>
                         </a>
                       </li>
@@ -146,8 +148,8 @@
                         <a href="{{route('Companies.index')}}" class="nav-link">
                             <i class="bi bi-building"></i>
                           <p>
-                            الشركـــــات الطبيـــــة 
-                            
+                            الشركـــــات الطبيـــــة
+
                           </p>
                         </a>
                       </li>

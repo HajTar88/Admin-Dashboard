@@ -19,6 +19,8 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
         <!-- Bootstrap 4 RTL -->
         <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
+        <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
+
     </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -137,8 +139,8 @@
                         <a href="{{route('hospitals.index')}}" class="nav-link  active">
                             <i class="bi bi-hospital"></i>
                             <p>
-                            المستشفيـــــات 
-                            
+                            المستشفيـــــات
+
                           </p>
                         </a>
                       </li>
@@ -146,8 +148,8 @@
                         <a href="{{route('Companies.index')}}" class="nav-link">
                             <i class="bi bi-building"></i>
                           <p>
-                            الشركـــــات الطبيـــــة 
-                            
+                            الشركـــــات الطبيـــــة
+
                           </p>
                         </a>
                       </li>

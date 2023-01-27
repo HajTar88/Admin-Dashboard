@@ -16,6 +16,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -44,7 +45,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/hospital.png" alt="">
-        
+
       </a>
 
       <nav id="navbar" class="navbar">
@@ -89,7 +90,7 @@
                 </div>
 
                 <div class="col-md-6 ">
-                  
+
                   <input type=" text" class="form-control" name="phone" placeholder="   رقم الهاتف "  >
                 </div>
 
@@ -100,7 +101,7 @@
                 </div>
               </div>
             </form>
-  
+
           </div>
 
         </div>
@@ -109,7 +110,7 @@
 
      <footer id="footer" class="footer">
 
-   
+
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
@@ -161,7 +162,7 @@
 
           </div>
 
-        </div> 
+        </div>
       </div>
     </div>
 
@@ -180,7 +181,7 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

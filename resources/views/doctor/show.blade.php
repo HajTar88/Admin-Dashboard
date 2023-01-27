@@ -18,6 +18,8 @@
     <!-- Bootstrap 4 RTL -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -29,11 +31,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -96,7 +98,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -132,8 +134,8 @@
                 <a href="{{route('hospitals.index')}}" class="nav-link ">
                     <i class="bi bi-hospital"></i>
                     <p>
-                    المستشفيـــــات 
-                    
+                    المستشفيـــــات
+
                   </p>
                 </a>
               </li>
@@ -141,8 +143,8 @@
                 <a href="{{route('Companies.index')}}" class="nav-link ">
                     <i class="bi bi-building"></i>
                   <p>
-                    الشركـــــات الطبيـــــة 
-                    
+                    الشركـــــات الطبيـــــة
+
                   </p>
                 </a>
               </li>
@@ -209,7 +211,7 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <!-- Morris chart - Sales -->
-                                        
+
                                                     <div class="form-group col-sm-15">
                                                       <label for="hospitalName">اسم الطبيب </label>
                                                       <input type="text" class="form-control" id="hospitalName"
@@ -229,7 +231,7 @@
                                                 <label for="hospitalCode">التخصص</label>
                                                 <input type="text" class="form-control" id="hospitalCode"
                                                  name="specialization" value="{{$doctor->specialization}}" placeholder="ادخل تخصص الطبيب">
-                                                
+
                                             </div>
                                             <div class="row">
                                                 <div class="col">
@@ -371,7 +373,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-     
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

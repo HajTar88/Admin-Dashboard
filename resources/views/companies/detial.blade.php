@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
 
   <title>دليل المستشفيات</title>
   <link href="/any/hospital.jpg" rel="icon">
@@ -52,7 +53,7 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="/any/image/hospital.png">
-        
+
       </a>
 
       <nav id="navbar" class="navbar">
@@ -90,7 +91,7 @@
                   <img src="{{$companies['photo']}}" alt="" style="width: 500px">
                 </div>
 
-               
+
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -109,7 +110,7 @@
             <div class="portfolio-description">
               <h2></h2>
               <p>
-                تأسست ام ار ميديكال  في عام 2008 بهدف ورؤية أن تصبح أول مركز للتجارة الإلكترونية لجميع المستلزمات الصحية وتوفر للمشتري فرصة أفضل للحصول على جميع المتطلبات في مجال الصحة بالإضافة إلى تسهيل فرصة المقارنة والاختيار بين العديد من المنتجات بأسعار معقولة دون عناء وفي أسرع وقت ممكن. 
+                تأسست ام ار ميديكال  في عام 2008 بهدف ورؤية أن تصبح أول مركز للتجارة الإلكترونية لجميع المستلزمات الصحية وتوفر للمشتري فرصة أفضل للحصول على جميع المتطلبات في مجال الصحة بالإضافة إلى تسهيل فرصة المقارنة والاختيار بين العديد من المنتجات بأسعار معقولة دون عناء وفي أسرع وقت ممكن.
               </p>
             </div>
           </div>
@@ -120,7 +121,7 @@
     </section><!-- End Portfolio Details Section -->
 
   </main>
-  
+
   <!-- End #main -->
    <!-- ======= Pricing Section ======= -->
 <section id="pricing" class="pricing" style="margin-bottom:100px;">
@@ -128,7 +129,7 @@
   <div class="container" data-aos="fade-up">
 
     <header class="section-header">
-     
+
       <p>المنتجات</p>
     </header>
 
@@ -136,48 +137,48 @@
 
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
-          
+
           {{-- <img src="assets/img/h.jpg" class="img-fluid" alt=""> --}}
           <ul>
             <li>أجهزة تخطيط القلب</li>
-          
+
           </ul>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
-          
+
           {{-- <img src="assets/img/j.jpg" class="img-fluid" alt=""> --}}
           <ul>
             <li>مجاهر طبية</li>
-            
+
           </ul>
         </div>
       </div>
 
        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
-          
+
           {{-- <img src="assets/img/k.jpg" class="img-fluid" alt=""> --}}
           <ul>
             <li> أسرة عملبات الأسنان</li>
-           
+
           </ul>
         </div>
       </div>
-      
+
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
-          
+
           {{-- <img src="assets/img/l.jpg" class="img-fluid" alt=""> --}}
           <ul>
             <li>الأسرة الطبية ومستلزماتها</li>
-           
+
           </ul>
         </div>
       </div>
-      
+
     </div>
   </div>
 </section>
@@ -189,7 +190,7 @@
   <!-- ======= Footer ======= -->
  <footer id="footer" class="footer">
 
-   
+
   <div class="footer-top">
     <div class="container">
       <div class="row gy-4">

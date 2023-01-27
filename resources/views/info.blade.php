@@ -11,6 +11,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
+    <link rel="icon" href="{{ URL::asset('/public/img/AdminLTELogo.png') }}">
+
     <link rel="stylesheet" href="/css/adminlte.css">
     <link rel="stylesheet" href="/css/adminlte.min.css">
     <link rel="stylesheet" href="/css/custom.css">
@@ -58,11 +60,11 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <!-- SEARCH FORM -->
-   
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
@@ -125,7 +127,7 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -142,7 +144,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
+
 
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -160,8 +162,8 @@
             <a href="{{route('hospitals.index')}}" class="nav-link">
                 <i class="bi bi-hospital"></i>
                 <p>
-                المستشفيـــــات 
-                
+                المستشفيـــــات
+
               </p>
             </a>
           </li>
@@ -169,8 +171,8 @@
             <a href="{{route('Companies.index')}}" class="nav-link">
                 <i class="bi bi-building"></i>
               <p>
-                الشركـــــات الطبيـــــة 
-                
+                الشركـــــات الطبيـــــة
+
               </p>
             </a>
           </li>
@@ -204,10 +206,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            
+
           </div><!-- /.col -->
           <div class="col-sm-6">
-           
+
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -224,13 +226,13 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>{{$hospitals}}</h3>
-  
+
                   <p>عدد المستشفيـــــات</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-hospital"></i>
                 </div>
-         
+
               </div>
             </div>
             <!-- ./col -->
@@ -244,7 +246,7 @@
                 <div class="icon">
                   <i class="ion bi bi-building" style="margin-top:-10px "></i>
                 </div>
-             
+
               </div>
             </div>
             <!-- ./col -->
@@ -253,23 +255,23 @@
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3>{{$doctors}}</h3>
-  
+
                   <p>عدد الأطبــــــاء</p>
                 </div>
                 <div class="icon">
                   <i class='fas fa-user-md'></i>
                 </div>
-               
+
               </div>
             </div>
-           
+
             <!-- ./col -->
           </div>
           <!-- /.row -->
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
-            
+
           </div>
           <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
