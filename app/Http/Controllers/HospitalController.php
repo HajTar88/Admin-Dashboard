@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hospital;
+use App\Models\User;
+use Hash;
 use Illuminate\Http\Request;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
+use DB;
 
 
 class HospitalController extends Controller
@@ -48,6 +51,7 @@ class HospitalController extends Controller
         // $hospitalS->id = $id;
         // $hospitalS->title = $request->get('title');
         // $hospitalS->save();
+        DB::transaction(function()  use ($request) {
         $request->validate([
             'password' => 'required|confirmed|min:6',
             'hospital_name' =>'required|max:255',
@@ -66,14 +70,18 @@ class HospitalController extends Controller
     );
         // $config=['table' => 'Hospital', 'field' =>'hospital_code', 'length' => 8, 'prefix' => 'HOS-'];
         $config = IdGenerator::generate(['table' => 'HospitalS', 'field' =>'hospital_code', 'length' => 8, 'prefix' => 'HOS']);
+        $data = $request->all();
+        $check = $this->create($data);
         $hospitals = Hospital::create([
             'hospital_code' => $config,
             'hospital_name' =>$request->hospital_name,
             'hospital_address' =>$request->hospital_address,
             'phone' =>$request->phone,
-            'password' =>bcrypt('password')        
+            'password' =>Hash::make($data['password'])
         ]);
+    });
         return redirect()->route('hospitals.index')->with('success','تمت الاضافة بنجاح');
+    
     }
 
     /**

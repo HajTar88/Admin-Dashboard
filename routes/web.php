@@ -39,7 +39,9 @@ Route::get('/', function () {
     // Route::put('Update/{id}','CompaniesController@update');
     // ################# CompaniesController #################
 
-Auth::routes();
+Auth::routes(
+    // ['login'=>false]
+);
 Route::middleware('auth')->group(function() {
     Route::resource('doctors', 'DoctorController');
     Route::resource('db', 'DashBoardController');

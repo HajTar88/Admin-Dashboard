@@ -233,8 +233,11 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="hospitalName">العنوان </label>
-                                                    <input type="text"  name="hospital_address" class="form-control" placeholder="العنوان ">
-                                                    <span class="text-red">    @error('hospital_address') <strong>{{ $message }}</strong> @enderror </span>
+                                                    <select name="hospital_address"  class="form-control"  id="hospital_address">
+                                                        <option value="الخرطوم" >الخرطوم</option>
+                                                        <option value="بحري" >بحري</option>
+                                                        <option value="امدرمان" >امدرمان</option>
+                                                    </select>                                                    <span class="text-red">    @error('hospital_address') <strong>{{ $message }}</strong> @enderror </span>
                                                 </div>
                                                 <div class="col">
                                                     <label for="hospitalName"> الهاتف</label>

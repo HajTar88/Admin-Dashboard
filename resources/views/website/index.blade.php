@@ -57,7 +57,7 @@
           <li><a class="nav-link scrollto" href="#pricing">المستشفيات</a></li>
           <li><a class="nav-link scrollto" href="#contact">اتصـــــل بـــــنا</a></li>
           <li><a class="nav-link scrollto" href="login.html"> تسجيل الدخول</a></li>
-          <li><a class="getstarted scrollto" href="reservation.html">أحجز الـآن</a></li>
+          <li><a class="getstarted scrollto" href="{{url('reservations')}}">أحجز الـآن</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -77,8 +77,8 @@
           <h2 data-aos="fade-up" data-aos-delay="400"> بوابة معلومات للمستشفيات يقدم لك دليل المستشفيات خيارات مرنة لايجاد ومقارنة المستشفيات المناسبة في منطقتك مع وظائف البحث الشاملة</h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-right text-lg-start">
-              <a href="reservation.html" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>أحجز الآن</span>
+              <a href="{{url('reservations')}}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span >أحجز الآن</span>
                 <i class="bi bi-arrow-left"></i>
               </a>
             </div>

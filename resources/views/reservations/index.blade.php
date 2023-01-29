@@ -71,7 +71,7 @@
   <footer id="footer" class="footer">
 
     <div class="footer-newsletter">
-      <div class="container" style="padding: 90px;">
+      <div class="container" style="padding: 100px;">
         <div class="row justify-content-center" >
           <div class="col-lg" >
             <form  action="{{route('reservations.store')}}"  method="POST">
@@ -93,6 +93,22 @@
 
                   <input type=" text" class="form-control" name="phone" placeholder="   رقم الهاتف "  >
                 </div>
+                <div class="col-md-6">
+                  <label for="hospitalName">أختر طبيب </label>
+                  <select name="hospital_address"  class="form-control"  id="hospital_address">
+                      <option value="علي" >علي</option>
+                      <option value="خالد" >خالد</option>
+                      <option value="محمد" >محمد</option>
+                  </select>                                                     
+              </div>
+              <div class="col-md-6">
+                <label for="hospitalName">أختر المواعيد </label>
+                <select name="hospital_address"  class="form-control"  id="hospital_address">
+                    <option value="الأحد" >الأحد</option>
+                    <option value="الأثنين" >الأثنين</option>
+                    <option value="الثلاثاء" >الثلاثاء</option>
+                </select>                                                    
+            </div>
 
                 <div class="col-md-12 text-center" style="padding: 20px;">
                  <button type="submit" class="btn btn-primary" style="margin-left: 70px;">حجز الأن </button>
