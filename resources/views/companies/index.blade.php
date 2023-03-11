@@ -186,6 +186,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route ('msg.index') }}" class="nav-link ">
+              <i class="bi bi-chat-right"></i>
+                <p>
+                  الرسائل
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route ('signout') }}" class="nav-link ">
               <i class="bi bi-box-arrow-right"></i>
               <p>
@@ -232,7 +240,7 @@
               <div class="card-header d-flex p-0">
                 <h3 class="card-title p-3">
                   <i class="fas fa-plus"></i>
-                  <a href="{{route('Companies.create')}}"><button class="btn btn-success" >اضـــــافة الشركة </button></a>
+                  <a href="{{route('Companies.create')}}"><button class="btn btn-success" >اضـــــافة شركة </button></a>
                 </h3>
 
               </div><!-- /.card-header -->
@@ -263,7 +271,7 @@
                         <th scope="col">رمز الشركة</th>
                         <th scope="col">اسم الشركة</th>
                         <th scope="col">العنوان </th>
-                        <th scope="col">المنتجات </th>
+                        <th scope="col">شعار الشركة  </th>
                         <th scope="col">العمليـــــات</th>
                       </tr>
                     </thead>
@@ -282,8 +290,8 @@
                           </td>
                         <td>
                          {{-- <a href="{{ route('Companies.edit', $item->id)}}" class="btn btn-success" >Edit</a> --}}
-                         <a href="{{url('modify/'.$item->id)}}"><i class="bi bi-pencil-square" style="color: #4caf50"></i></a>
                          <a href="{{ route('Companies.show', $item->id)}}"><i class="bi bi-eye-fill"></i></a>
+                         <a href="{{url('modify/'.$item->id)}}"><i class="bi bi-pencil-square" style="color: #4caf50"></i></a>
                          <a href="{{url('delete/'.$item->id)}}" class="delete-confirm"><i class="bi bi-trash-fill" style="color: red"></i></a>
                          {{-- <form action="{{ route('Companies.destroy',$item->id)}}" method="POST">
                           @csrf

@@ -162,6 +162,14 @@
                         </a>
                       </li>
                       <li class="nav-item">
+                        <a href="{{ route ('msg.index') }}" class="nav-link ">
+                          <i class="bi bi-chat-right"></i>
+                            <p>
+                              الرسائل
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a href="{{ route ('signout') }}" class="nav-link ">
                           <i class="bi bi-box-arrow-right"></i>
                           <p>
@@ -239,6 +247,12 @@
                                                     <label for="hospitalName"> الهاتف</label>
                                                     {{-- <input type="text" value="{{$hospitals->phone}}" name="phone" class="form-control" placeholder="الهاتف "> --}}
                                                     <p>{{$hospitals->phone}}</p>
+                                                </div>
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="hospitalName">شعار المستشفى</label><br>
+                                                    <img src="{{$hospitals->photo}}" width="80">
                                                 </div>
                                             </div><br>
                                             {{-- <div class="row">

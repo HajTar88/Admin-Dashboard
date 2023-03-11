@@ -162,6 +162,14 @@
                         </a>
                       </li>
                       <li class="nav-item">
+                        <a href="{{ route ('msg.index') }}" class="nav-link ">
+                          <i class="bi bi-chat-right"></i>
+                            <p>
+                              الرسائل
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a href="{{ route ('signout') }}" class="nav-link ">
                           <i class="bi bi-box-arrow-right"></i>
                           <p>
@@ -232,6 +240,11 @@
                                                         <small class="form-text text-danger"></small>
                                                         @enderror --}}
                                                 </div>
+                                                <div class="form-group col">
+                                                    <label for="hospitalName">المنتجات</label>
+                                                    <input name="images[]" type="file" multiple class="form-control" id="hospitalName">
+                            
+                                                </div>
                                             </div>
                                             <span class="text-red">    @error('company_name')    {{$message}} @enderror </span>
                                             <div class="row">
@@ -245,12 +258,21 @@
                                                     <input name="phone" type="text" class="form-control" placeholder="الهاتف ">
                                                     <span class="text-red">    @error('phone')    {{$message}} @enderror </span>
                                                 </div>
-                                            </div>
-                                            <br>
+                                            </div> <br>
                                             <div class="row">
+                                                <div class="form-group col">
+                                                    <label for="hospitalName">وصف الشركة</label>
+                                                    <input name="company_description" type="text" class="form-control" id="hospitalName"
+                                                        placeholder="وصف الشركة">
+                                                        {{-- @error('company_name')
+                                                        <small class="form-text text-danger"></small>
+                                                        @enderror --}}
+                                                </div>
+                                            </div>
+                                            <div class="row"><br>
                                                 <div class="col">
-                                                    <label for="hospitalName">المنتجات </label>
-                                                    <input name="photo" type="file" class="form-control" placeholder="المنتجات ">
+                                                    <label for="hospitalName">شعار الشركة </label>
+                                                    <input name="photo" type="file" class="form-control" placeholder="شعار الشركة ">
                                                     <span class="text-red">    @error('photo')    {{$message}} @enderror </span>
                                                 </div>
                                                 <div class="col">

@@ -162,6 +162,14 @@
                         </a>
                       </li>
                       <li class="nav-item">
+                        <a href="{{ route ('msg.index') }}" class="nav-link ">
+                          <i class="bi bi-chat-right"></i>
+                            <p>
+                              الرسائل
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a href="{{ route ('signout') }}" class="nav-link ">
                           <i class="bi bi-box-arrow-right"></i>
                           <p>
@@ -216,7 +224,7 @@
                                 <div class="card-body">
                                     <div class="tab-content p-0">
                                         <!-- Morris chart - Sales -->
-                                        <form action="{{route('hospitals.store')}}" method="POST">
+                                        <form action="{{route('hospitals.store')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 {{-- <div class="form-group col">
@@ -228,6 +236,13 @@
                                                     <input type="text" name="hospital_name" class="form-control" id="hospitalName"
                                                         placeholder="اسم المستشفى">
                                                         <span class="text-red">    @error('hospital_name') <strong>{{ $message }}</strong> @enderror </span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <label for="hospitalName">شعار المستشفى </label>
+                                                    <input name="photo" type="file" class="form-control" placeholder="شعار المستشفى ">
+                                                    <span class="text-red">    @error('photo')    {{$message}} @enderror </span>
                                                 </div>
                                             </div>
                                             <div class="row">

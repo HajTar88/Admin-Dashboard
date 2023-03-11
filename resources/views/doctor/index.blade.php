@@ -186,6 +186,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route ('msg.index') }}" class="nav-link ">
+              <i class="bi bi-chat-right"></i>
+                <p>
+                  الرسائل
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route ('signout') }}" class="nav-link ">
               <i class="bi bi-box-arrow-right"></i>
               <p>

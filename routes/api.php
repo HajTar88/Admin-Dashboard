@@ -26,6 +26,23 @@ Route::post('/hospitals',[\App\Http\Controllers\Api\HospitalController::class, '
 Route::put('/hospital/{Hospital}',[\App\Http\Controllers\Api\HospitalController::class, 'update']);
 Route::delete('/hospital/{Hospital}',[\App\Http\Controllers\Api\HospitalController::class, 'destroy']);
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('/reservations',[\App\Http\Controllers\Api\ReservationController::class, 'index']);
+Route::get('/reservation/{id}',[\App\Http\Controllers\Api\ReservationController::class, 'show']);
+
+Route::post('/reservations',[\App\Http\Controllers\Api\ReservationController::class, 'store']);
+Route::put('/reservation/{Reservation}',[\App\Http\Controllers\Api\ReservationController::class, 'update']);
+Route::delete('/reservation/{Reservation}',[\App\Http\Controllers\Api\ReservationController::class, 'destroy']);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('/consultations',[\App\Http\Controllers\Api\ConsultationController::class, 'index']);
+Route::get('/consultation/{id}',[\App\Http\Controllers\Api\ConsultationController::class, 'show']);
+
+Route::post('/consultations',[\App\Http\Controllers\Api\ConsultationController::class, 'store']);
+Route::put('/consultation/{Consultation}',[\App\Http\Controllers\Api\ConsultationController::class, 'update']);
+Route::delete('/consultation/{Consultation}',[\App\Http\Controllers\Api\ConsultationController::class, 'destroy']);
 
 
 

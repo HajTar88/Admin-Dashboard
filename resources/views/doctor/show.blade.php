@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>لوحة تحكم المستشفى</title>
+    <title>لوحة تحكم الموقع</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -157,6 +157,14 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route ('msg.index') }}" class="nav-link ">
+                  <i class="bi bi-chat-right"></i>
+                    <p>
+                      الرسائل
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route ('signout') }}" class="nav-link ">
                   <i class="bi bi-box-arrow-right"></i>
                   <p>
@@ -252,7 +260,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <a href="{{route('doctors.index')}}" class="btn btn-danger">رجوع <i
-                                                            class="bi bi-x-lg"></i></a>
+                                                            class=""></i></a>
                                                 </div>
                                             </div>
                                     </div>

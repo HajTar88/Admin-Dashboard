@@ -185,6 +185,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route ('msg.index') }}" class="nav-link ">
+              <i class="bi bi-chat-right"></i>
+                <p>
+                  الرسائل
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route ('signout') }}" class="nav-link ">
               <i class="bi bi-box-arrow-right"></i>
               <p>
@@ -260,6 +268,20 @@
                 </div>
                 <div class="icon">
                   <i class='fas fa-user-md'></i>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>{{$msg}}</h3>
+
+                  <p>الرسائل</p>
+                </div>
+                <div class="icon">
+                  <i class="bi bi-inbox" style="margin-top:-10px"></i>
                 </div>
 
               </div>

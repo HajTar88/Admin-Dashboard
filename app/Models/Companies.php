@@ -10,7 +10,10 @@ use Illuminate\Support\Facades\storage;
 
 class Companies extends Model
 {
-    protected $fillable = ['company_code','company_name','address','phone','photo','services'];
+    protected $fillable = ['company_code','company_name','address','phone','photo','services','company_description','images'];
+    protected $casts =[
+        'images'=>'array'
+    ];
 
     public function getPhotoAttribute($value){
         if($value){
@@ -20,3 +23,4 @@ class Companies extends Model
         }
     }
 }
+?>

@@ -44,7 +44,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{url('index/')}}" class="logo d-flex align-items-center">
         <img src="assets/img/hospital.png" alt="">
 
       </a>
@@ -56,7 +56,6 @@
           <li><a class="nav-link scrollto" href="#services">الشركـــــات الطبيـــــة</a></li>
           <li><a class="nav-link scrollto" href="#pricing">المستشفيات</a></li>
           <li><a class="nav-link scrollto" href="#contact">اتصـــــل بـــــنا</a></li>
-          <li><a class="nav-link scrollto" href="login.html"> تسجيل الدخول</a></li>
           <li><a class="getstarted scrollto" href="{{url('reservations')}}">أحجز الـآن</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -143,7 +142,9 @@
                       <img src="{{$item->photo}}" class="img-fluid" alt="">
                       <h3 >{{$item->company_name}}</h3>
                       <p>للأجهزة والمعدات الطبية بالجملة والتجزئة</p>
-                      <a href="{{url('detail/'.$item->id)}}" class="read-more"><span> تفاصيل</span> <i class="bi bi-arrow-left"></i></a>
+                      <a href="{{url('detail/'.$item->id)}}" class="read-more">
+                        <span> تفاصيل</span> 
+                        <i class="bi bi-arrow-left"></i></a>
                     </div>
                   </div>
                   @endforeach
@@ -166,13 +167,14 @@
           @foreach ($hospitals as $item)
           <div class="col-3" data-aos="zoom-in" data-aos-delay="10">
             <div class="box">
-              <img src="/img/rc.png" class="img-fluid" alt="">
+              {{-- <img src="/img/rc.png" class="img-fluid" alt=""> --}}
+              <img src="{{$item->photo}}" class="img-fluid" alt="" width="">
               <ul>
                 <li>{{$item->hospital_name}}</li>
                 <li>{{$item->hospital_address}}</li>
                 <li>{{$item->phone}}</li>
               </ul>
-              <a href="hospitals details.html" class="btn-buy">تفاصيل</a>
+              <a href="{{url('detailh/'.$item->id)}}" class="btn-buy">تفاصيل</a>
             </div>
           </div>
           @endforeach
@@ -193,20 +195,24 @@
         <div class="row gy-4" style="align-items: center;">
 
           <div class="col-lg">
-            <form action="forms/contact.php" method="post" class="php-email-form" >
+            
+            {{-- <form action="{{route('Companies.store')}}" method="POST" class="php-email-form" >
+              @csrf
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" الاسم="الاسم" class="form-control" placeholder="الاسم" required>
+                  <input type="text" name="name"  class="form-control" placeholder="الاسم" required>
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="البريد الالكتروني" class="form-control" name="البريد الالكتروني" placeholder="البريد الالكتروني" required>
+                  <input type="email" class="form-control" name="email" placeholder="البريد الالكتروني" required>
                 </div>
                 <div class="col-md-12">
-                  <textarea class="form-control" name="رسالة" rows="6" placeholder="رسالة" required></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="رسالة" required></textarea>
                 </div>
-
+                <div class="col">
+                  <button class="btn btn-primary">حفظ</button>
+              </div>
                 <div class="col-md-12 text-center">
                   <div class="loading">تحميل</div>
                   <div class="error-message"></div>
@@ -216,7 +222,30 @@
                 </div>
 
               </div>
-            </form>
+            </form> --}}
+            <form action="{{route('index.store')}}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name"  class="form-control" placeholder="الاسم" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="البريد الالكتروني" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="رسالة" required></textarea>
+                </div>
+              <br>
+              <div class="row">
+                  <div class="col-md-12 text-center"><br>
+                      {{-- <button class="btn btn-primary">حفظ</button> --}}
+                      <button type="submit"  class="btn btn-primary" >إرسال</button>
+
+                  </div>
+              </div>
+          </form>
 
           </div>
 

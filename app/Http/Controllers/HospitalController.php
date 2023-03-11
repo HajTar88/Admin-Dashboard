@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hospital;
+use App\Models\Doctors;
+use App\Models\Patients;
+use App\Models\Rooms;
+use App\Models\Wards;
 use App\Models\User;
 use Hash;
 use Illuminate\Http\Request;
@@ -20,7 +24,7 @@ class HospitalController extends Controller
     public function index()
     {
      //   $product = Product::all();
-     $hospitals = Hospital::latest()->paginate(5);
+     $hospitals = Hospital::latest()->paginate(20);
        return view('hospital.index', compact('hospitals'));
     }
     /**
@@ -69,6 +73,7 @@ class HospitalController extends Controller
         ]
     );
         // $config=['table' => 'Hospital', 'field' =>'hospital_code', 'length' => 8, 'prefix' => 'HOS-'];
+        $photo = request('photo')->store('uploads/Hos', 'public');
         $config = IdGenerator::generate(['table' => 'HospitalS', 'field' =>'hospital_code', 'length' => 8, 'prefix' => 'HOS']);
         $data = $request->all();
         $check = $this->create($data);
@@ -77,8 +82,11 @@ class HospitalController extends Controller
             'hospital_name' =>$request->hospital_name,
             'hospital_address' =>$request->hospital_address,
             'phone' =>$request->phone,
+            'photo' =>$photo,
             'password' =>Hash::make($data['password'])
-        ]);
+        ]); 
+    
+ 
     });
         return redirect()->route('hospitals.index')->with('success','تمت الاضافة بنجاح');
     
@@ -122,6 +130,7 @@ class HospitalController extends Controller
             'hospital_name' =>'required|max:255',
             'hospital_address' =>'required',
             'phone' =>'required',
+            'photo' => 'required'
         ],
         [
           'hospital_name.required'=>'اسم المستشفي مطلوب',
@@ -132,14 +141,21 @@ class HospitalController extends Controller
           'password.min'=>' كلمة السر قصيرة جدا',
           'password.confirmed'=>' كلمة السر غير متطابقة',
         ]
-    );
+        );
+        $photo = request('photo')->store('uploads/Hos', 'public');
         $hospitals = Hospital::find($id);
+        $data = $request->all();
+        $check = $this->create($data);
         $hospitals->update([
             'hospital_name' =>$request->hospital_name,
             'hospital_address' =>$request->hospital_address,
             'phone' =>$request->phone,
-            'password' =>bcrypt('password')   
+            'photo' =>$photo,
+            'password' =>Hash::make($data['password'])
         ]);
+        
+
+
         return redirect()->route('hospitals.index')->with('succes','تم التعديل بنجاح');
     }
 
@@ -165,4 +181,18 @@ class HospitalController extends Controller
         $hospitals = Hospital::find($id);
         return view('hospital.modifyh' , compact('hospitals'));
     }
+
+    public function detial($id)
+    {
+        $hospitals = Hospital::find($id);
+        $hospitals = Hospital::all();
+        $doctors = Doctors::where('hospital_id', $id)->count();
+        $doctor = Doctors::where('hospital_id', $id)->get();
+        $patients = Patients::where('hospital_id', $id)->count();
+        $rooms = Rooms::where('hospital_id', $id)->count();
+        $wards = Wards::where('hospital_id', $id)->count();
+        return view('hospital.detial', compact('hospitals','doctors','doctor','patients','rooms','wards'));
+    }
+
 }
+?>

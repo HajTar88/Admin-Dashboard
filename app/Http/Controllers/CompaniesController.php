@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Collection\getDictionary;
 use App\Models\Companies;
 use Illuminate\Http\Request;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class CompaniesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
+    
+     /* Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $companies = companies::latest()->paginate(4);
+        $companies = companies::latest()->paginate(20);
         return view('companies.index' , compact('companies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
+    
+     /* Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,8 +30,8 @@ class CompaniesController extends Controller
         return view('companies.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
+    
+     /* Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -39,6 +40,7 @@ class CompaniesController extends Controller
     {
         $request->validate([
             'company_name' =>'required|max:255',
+            'company_description' =>'required|max:255',
             'address' =>'required',
             'phone' =>'required',
             'photo' =>'required',
@@ -52,7 +54,34 @@ class CompaniesController extends Controller
           'services.required'=>'نوع الخدمة مطلوبة',
         ]
     );
-           
+       
+    // $images = [];
+
+    // if ($request->images){
+
+    //     foreach($request->images as $key => $image)
+
+    //     {
+
+    //         $imageName = time().rand(1,99).'.'.$image->extension();  
+
+    //         $image->move(public_path('images'), $imageName);
+
+
+
+    //         $images[]['images'] = $imageName;
+
+    //     }
+
+    // }
+    $images = [];
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $file) {
+            $path = $file->store('public/images');
+            $images[] = $path;
+        }
+    }
+
         $photo = request('photo')->store('uploads/img', 'public');
         $id = IdGenerator::generate(['table' => 'companies', 'field' =>'company_code', 'length' => 8, 'prefix' => 'COM-']);
         $companies = companies::create([
@@ -62,14 +91,16 @@ class CompaniesController extends Controller
              'phone' =>$request->phone,
              'photo' =>$photo,
              'services' =>$request->services,
+             'company_description'=>$request->company_description,
+            'images' =>$images,
               // \DB::table('companies')->insert(['company_code'=>$id ,'company_name' =>$request->company_name,'address' =>$request->address,'phone' =>$request->phone,'photo' =>$photo,]),
 
         ]);
         return redirect()->route('Companies.index')->with('success','تمت الاضافة بنجاح');
     }
 
-    /**
-     * Display the specified resource.
+    
+     /* Display the specified resource.
      *
      * @param  \App\Models\Companies  $companies
      * @return \Illuminate\Http\Response
@@ -80,8 +111,8 @@ class CompaniesController extends Controller
         return view('Companies.show' , compact('companies'))->with('Companies', $companies);
     }
 
-    /**
-     * Show the form for editing the specified resource.
+
+     /* Show the form for editing the specified resource.
      *
      * @param  \App\Models\Companies  $companies
      * @return \Illuminate\Http\Response
@@ -92,8 +123,8 @@ class CompaniesController extends Controller
         return view('companies.modify');
     }
 
-    /**
-     * Update the specified resource in storage.
+    
+     /* Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Companies  $companies
@@ -115,6 +146,26 @@ class CompaniesController extends Controller
           'photo.required'=>'الصورة مطلوبة',
           'services.required'=>'نوع الخدمة مطلوبة',
         ]);
+        $images = [];
+
+    if ($request->images){
+
+        foreach($request->images as $key => $image)
+
+        {
+
+            $imageName = time().rand(1,99).'.'.$image->extension();  
+
+            $image->move(public_path('images'), $imageName);
+
+
+
+            $images[]['images'] = $imageName;
+
+        }
+
+    }
+
         $photo = request('photo')->store('uploads/img', 'public');
         $companies = Companies::find($id);
         $companies->update([
@@ -123,6 +174,10 @@ class CompaniesController extends Controller
             'phone' =>$request->phone,
             'photo' =>$photo,
             'services' =>$request->services,
+            'company_description'=>$request->company_description,
+            'images' =>$images,
+
+
         ]);
         #Check if uploaded file already exist in Folder
 
@@ -151,9 +206,16 @@ class CompaniesController extends Controller
         $companies = Companies::find($id);
         return view('companies.modify' , compact('companies'));
     }
-    public function detial($id)
+    public function detial($id , Companies $companies)
     {
         $companies = Companies::find($id);
+       // $images = Companies::all(('images'));
+    //     $images = $companies::all('images');
+    //     $filename = $images->getClientOriginalName();
+         //  $companies = new companies;
+         //   $companies->images = $images;
+    //    $ima = $companies->images;
+      // $images = companies::all();['images' => $images],
         return view('companies.detial', compact('companies'));
     }
 }
@@ -161,11 +223,12 @@ class CompaniesController extends Controller
 
 /*
         $companies = new Companies;
-	// $profile->photo = $request->photo;
+  // $profile->photo = $request->photo;
 
-	// storage/app/photo/random.jpg
-	$path = $request->file('photo')->store('public/image');
-	$companies->photo = $path;
+أحمد الأمين, [3/9/2023 7:46 AM]
+// storage/app/photo/random.jpg
+  $path = $request->file('photo')->store('public/image');
+  $companies->photo = $path;
           /*
       if ($request->hasFile('photo')) {
         $input['photo'] = $ImageNameToStore;
@@ -206,3 +269,4 @@ class CompaniesController extends Controller
         }
        // Images::create($input);*/
   
+?>

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use App\Models\Doctors;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    /**
+    /*
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,10 +16,11 @@ class ReservationController extends Controller
     public function index()
     {
         $reservations = Reservation::latest()->paginate(4);
-        return view('reservations.index' , compact('reservations'));
+        $doctors = Doctors::all();
+        return view('reservations.index' , compact('reservations', 'doctors'));
     }
 
-    /**
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -28,25 +30,27 @@ class ReservationController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
+    
+    /* Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $doctors = Doctors::all();
         $reservation = Reservation::create([
             'first_name'=>$request->first_name,
-            'family_name'=>$request->family_name,
             'address'=>$request->address,
             'phone'=>$request->phone,
+            'chdoctor'=>$request->chdoctor,
+
         ]);
-        return redirect()->route('reservations.index')->with('success','reservations add Successfully');
+        return redirect()->route('index.index', compact('doctors'))->with('success','reservations add Successfully');
     }
 
-    /**
-     * Display the specified resource.
+    
+     /* Display the specified resource.
      *
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
@@ -56,8 +60,8 @@ class ReservationController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
+    
+     /* Show the form for editing the specified resource.
      *
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
@@ -67,8 +71,8 @@ class ReservationController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
+    
+     /* Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Reservation  $reservation
@@ -90,3 +94,4 @@ class ReservationController extends Controller
         //
     }
 }
+?>

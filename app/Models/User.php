@@ -12,3 +12,4 @@ class User extends \Eloquent implements Authenticatable
     use HasFactory;
     protected $fillable = ['name','password' , 'email', 'hospital_name'];
 }
+?>

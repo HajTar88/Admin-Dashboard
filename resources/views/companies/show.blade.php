@@ -162,6 +162,14 @@
                         </a>
                       </li>
                       <li class="nav-item">
+                        <a href="{{ route ('msg.index') }}" class="nav-link ">
+                          <i class="bi bi-chat-right"></i>
+                            <p>
+                              الرسائل
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a href="{{ route ('signout') }}" class="nav-link ">
                           <i class="bi bi-box-arrow-right"></i>
                           <p>
@@ -247,7 +255,7 @@
                                             </div><br>
                                             <div class="row">
                                                 <div class="col">
-                                                    <label for="hospitalName">المنتجات </label><br>
+                                                    <label for="hospitalName">شعار الشركة </label><br>
                                                     <img src="{{$companies->photo}}" width="80">
                                                 </div>
                                                 <div class="col">
@@ -256,8 +264,19 @@
                                                     <p>{{$companies->services}}</p>
                                                 </div>
                                             </div><br>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="hospitalName">وصف الشركة </label><br>
+                                                    <p>{{$companies->company_description}}</p>
+                                                </div>
+                                                {{-- <div class="col">
+                                                    <label for="hospitalName">المنتجات</label><br>
+                                                    <img src="{{$companies->images}}" width="80">
+                                                </div> --}}
+                                                
+                                            </div>
                                     </div>
-                                    <div class="d-flex justify-content-center"><a href="{{route('Companies.index')}}"  class="btn btn-danger ">رجوع</a></div>
+                                    <div class="d-flex justify-content"><a href="{{route('Companies.index')}}"  class="btn btn-danger ">رجوع</a></div>
 
                                 </div><!-- /.card-body -->
 

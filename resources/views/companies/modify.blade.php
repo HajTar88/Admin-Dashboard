@@ -161,6 +161,14 @@
                         </a>
                       </li>
                       <li class="nav-item">
+                        <a href="{{ route ('msg.index') }}" class="nav-link ">
+                          <i class="bi bi-chat-right"></i>
+                            <p>
+                              الرسائل
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a href="{{ route ('signout') }}" class="nav-link ">
                           <i class="bi bi-box-arrow-right"></i>
                           <p>
@@ -230,6 +238,13 @@
                                                         placeholder="اسم الشركة">
                                                         <span class="text-red">    @error('company_name') <strong>{{ $message }}</strong> @enderror </span>
                                                 </div>
+                                                <div class="form-group col">
+                                                    <label for="hospitalName">المنتجات</label>
+                                                    <input name="images[]" type="file" multiple class="form-control" id="hospitalName">
+                                                        {{-- @error('company_name')
+                                                        <small class="form-text text-danger"></small>
+                                                        @enderror --}}
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
@@ -242,11 +257,18 @@
                                                     <input name="phone" value="{{$companies->phone}}" type="text" class="form-control" placeholder="الهاتف ">
                                                     <span class="text-red">    @error('phone') <strong>{{ $message }}</strong> @enderror </span>
                                                 </div>
-
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <label for="hospitalName">وصف الشركة</label>
+                                                    <input name="company_description" value="{{$companies->company_description}}" type="text" class="form-control" id="hospitalName"
+                                                        placeholder="اسم الشركة">
+                                                        <span class="text-red">    @error('company_description') <strong>{{ $message }}</strong> @enderror </span>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <label for="hospitalName">المنتجات </label>
+                                                    <label for="hospitalName">شعار الشركة </label>
                                                     <input name="photo" value="{{$companies->photo}}" type="file" class="form-control" placeholder="المنتجات ">
                                                     <img src="{{$companies->photo}}" width="80">
                                                     <span class="text-red">    @error('photo') <strong>{{ $message }}</strong> @enderror </span>
@@ -263,7 +285,7 @@
                                             </div><br>
                                             <div class="row">
                                                 <div class="col">
-                                                    <button class="btn btn-primary">حفظ</button>
+                                                    <button class="btn btn-primary">تعديل</button>
                                                 </div>
                                                 <div class="col">
                                                     <a href="{{route('Companies.index')}}" class="btn btn-danger">الغاء</a>

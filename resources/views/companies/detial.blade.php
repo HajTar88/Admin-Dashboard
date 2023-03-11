@@ -51,7 +51,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{url('index/')}}" class="logo d-flex align-items-center">
         <img src="/any/image/hospital.png">
 
       </a>
@@ -63,8 +63,7 @@
           <li><a class="nav-link scrollto" href="#">الشركـــــات الطبيـــــة</a></li>
           <li><a class="nav-link scrollto" href="#">المستشفيات</a></li>
           <li><a class="nav-link scrollto" href="#">اتصـــــل بـــــنا</a></li>
-          <li><a class="nav-link scrollto" href="login.html"> تسجيل الدخول</a></li>
-          <li><a class="getstarted scrollto" style="color: #fff;" href="reservation.html">أحجز الـآن</a></li>
+          <li><a class="getstarted scrollto" style="color: #fff;" href="{{url('reservations/')}}">أحجز الـآن</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -88,7 +87,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="{{$companies['photo']}}" alt="" style="width: 500px">
+                  <img src="{{$companies['photo']}}" alt="" style="width: 350px">
                 </div>
 
 
@@ -102,16 +101,14 @@
               <h3>{{$companies['company_name']}}</h3>
               <ul>
                 <li>شركة خدمات طبية</li>
-                <li>لدينا جميع المستلزمات الطبية وبأفضل الاسعار</li>
-                <li>هاتف: 2860</li>
-                <li>الموقع: الخرطوم بحري</a></li>
+                <li>هاتف:{{$companies['phone']}}</li>
+                <li>الموقع:{{$companies['address']}}</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
               <h2></h2>
               <p>
-                تأسست ام ار ميديكال  في عام 2008 بهدف ورؤية أن تصبح أول مركز للتجارة الإلكترونية لجميع المستلزمات الصحية وتوفر للمشتري فرصة أفضل للحصول على جميع المتطلبات في مجال الصحة بالإضافة إلى تسهيل فرصة المقارنة والاختيار بين العديد من المنتجات بأسعار معقولة دون عناء وفي أسرع وقت ممكن.
-              </p>
+                {{$companies['company_description']}}              </p>
             </div>
           </div>
 
@@ -138,9 +135,9 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
 
-          {{-- <img src="assets/img/h.jpg" class="img-fluid" alt=""> --}}
+          <img src="/assets/img/h.jpg" class="img-fluid" alt="">
           <ul>
-            <li>أجهزة تخطيط القلب</li>
+            {{-- <li>أجهزة تخطيط القلب</li> --}}
 
           </ul>
         </div>
@@ -149,9 +146,9 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
 
-          {{-- <img src="assets/img/j.jpg" class="img-fluid" alt=""> --}}
+          <img src="/assets/img/j.jpg" class="img-fluid" alt="">
           <ul>
-            <li>مجاهر طبية</li>
+            {{-- <li>مجاهر طبية</li> --}}
 
           </ul>
         </div>
@@ -160,9 +157,9 @@
        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
 
-          {{-- <img src="assets/img/k.jpg" class="img-fluid" alt=""> --}}
+          <img src="/assets/img/k.jpg" class="img-fluid" alt="">
           <ul>
-            <li> أسرة عملبات الأسنان</li>
+            {{-- <li> أسرة عملبات الأسنان</li> --}}
 
           </ul>
         </div>
@@ -171,9 +168,9 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="10">
         <div class="box">
 
-          {{-- <img src="assets/img/l.jpg" class="img-fluid" alt=""> --}}
+          <img src="/assets/img/l.jpg" class="img-fluid" alt="">
           <ul>
-            <li>الأسرة الطبية ومستلزماتها</li>
+            {{-- <li>الأسرة الطبية ومستلزماتها</li> --}}
 
           </ul>
         </div>
@@ -181,6 +178,15 @@
 
     </div>
   </div>
+  {{-- @foreach ($companies->images as $image)
+  <img src="{{ asset($image) }}" alt="Image">
+@endforeach --}}
+
+  {{-- @foreach ($images as $image)
+  <div class="col-md-4">
+    <img src="{{ asset('images/' . $image->getClientOriginalName()) }}" alt="" class="img-fluid">
+  </div>
+@endforeach --}}
 </section>
 <!-- End Pricing Section -->
 

@@ -185,6 +185,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route ('msg.index') }}" class="nav-link ">
+              <i class="bi bi-chat-right"></i>
+                <p>
+                  الرسائل
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route ('signout') }}" class="nav-link ">
               <i class="bi bi-box-arrow-right"></i>
               <p>
@@ -262,6 +270,7 @@
                         <th scope="col">اسم المستشفى</th>
                         <th scope="col">العنوان </th>
                         <th scope="col">الهاتف </th>
+                        <th scope="col">شعار المستشفى </th>
                         <th scope="col">العمليـــــات</th>
                       </tr>
                     </thead>
@@ -276,10 +285,13 @@
                         <td>{{$item->hospital_name}}</td>
                         <td>{{$item->hospital_address}}</td>
                         <td>{{$item->phone}}</td>
+                        <td>
+                          <img src="{{$item->photo}}" width="80">
+                          </td>
 
                         <td>
+                          <a href="{{ route('hospitals.show', $item->id)}}"><i class="bi bi-eye-fill"></i></a>
                          <a href="{{url('modifyh/'.$item->id)}}"><i class="bi bi-pencil-square" style="color: #4caf50"></i></a>
-                         <a href="{{ route('hospitals.show', $item->id)}}"><i class="bi bi-eye-fill"></i></a>
                          <a href="{{url('deleteh/'.$item->id)}}" class="delete-confirm"><i class="bi bi-trash-fill" style="color: red"></i></a>
                         </td>
                       </tr>
